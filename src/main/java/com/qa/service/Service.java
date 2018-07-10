@@ -11,7 +11,7 @@ public class Service {
 		if(accountsList.containsKey(id)) {
 			return Constants.INVALID_ID_MESSAGE;
 		} else {
-			accountsList.put(id, account);
+			accountsList.put(account.getAccountNumber(), account);
 			return Constants.ACCOUNT_ADDED_MESSAGE;
 		}
 	}
@@ -25,15 +25,16 @@ public class Service {
 		}
 	}
 	
-	public String getAccount(int id) {
+	public Accounts getAccount(int id) {
 		if(accountsList.containsKey(id)) {
-			return accountsList.get(id).toString();
+			return accountsList.get(id);
 		} else {
-			return Constants.INVALID_ID_MESSAGE;
+			Accounts failAccount = new Accounts();
+			return failAccount;
 		}
 	}
 	
-	public String editAccount(int id, String firstName, String lastName, String accountNumber) {
+	public String editAccount(int id, String firstName, String lastName, int accountNumber) {
 		if(accountsList.containsKey(id)) {
 			accountsList.get(id).setFirstName(firstName);
 			accountsList.get(id).setLastName(lastName);
