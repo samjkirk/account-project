@@ -47,13 +47,6 @@ public class Service {
 	}
 
 	public int searchForAccountByName(String string) {
-		int count = 0;
-		for(Map.Entry<Integer, Accounts> entry : accountsList.entrySet()) {
-			if (entry.getValue().getFirstName().equals(string))
-			{
-				count++;
-			}
-		}
-		return count;
+		return (int)accountsList.values().stream().filter(s -> s.getFirstName().equals(string)).count();
 	}
 } 

@@ -26,5 +26,4 @@ public class SearchNameTest {
 		int actualResult = service.searchForAccountByName("Sam");
 		Assert.assertEquals(2, actualResult);
 	}
-
 }
