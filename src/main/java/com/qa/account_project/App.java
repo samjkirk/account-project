@@ -13,20 +13,20 @@ public class App
     public static void main( String[] args )
     {
     	Service service = new Service();
-    	Accounts account1 = new Accounts("Sam", "Kirk", 10001);
+    	Accounts account1 = new Accounts("Sam", "Kirk", 1001);
     	ObjectMapper mapperObj = new ObjectMapper();
     	XStream xstream = new XStream();
     	
     	service.addAccount(account1.getAccountNumber(), account1);
     	
     	try {
-            String jsonStr = mapperObj.writeValueAsString(service.getAccount(0));
+            String jsonStr = mapperObj.writeValueAsString(service.getAccount(account1.getAccountNumber()));
             System.out.println(jsonStr + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
     	
-    	String xmlString = xstream.toXML(service.getAccount(0));
+    	String xmlString = xstream.toXML(service.getAccount(account1.getAccountNumber()));
     	System.out.println(xmlString + "\n");
 
     }

@@ -13,9 +13,9 @@ public class Accounts {
 	}
 
 	public Accounts() {
-		setFirstName(firstName);
-		setLastName(lastName);
-		setAccountNumber(accountNumber);
+		setFirstName("");
+		setLastName("");
+		setAccountNumber(0);
 	}
 	
 	public void setFirstName(String firstName) {
