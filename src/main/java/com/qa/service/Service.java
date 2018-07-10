@@ -1,4 +1,4 @@
-package service;
+package com.qa.service;
 
 import com.qa.accounts.Accounts;
 import com.qa.constants.Constants;
