@@ -4,9 +4,9 @@ public class Accounts {
 	
 	private String firstName;
 	private String lastName;
-	private String accountNumber;
+	private int accountNumber;
 	
-	public Accounts(String firstName, String lastName, String accountNumber) {
+	public Accounts(String firstName, String lastName, int accountNumber) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setAccountNumber(accountNumber);
@@ -24,8 +24,8 @@ public class Accounts {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setAccountNumber(int accountNumber2) {
+		this.accountNumber = accountNumber2;
 	}
 	
 	public String getFirstName() {
@@ -34,7 +34,7 @@ public class Accounts {
 	public String getLastName() {
 		return lastName;
 	}
-	public String getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 	
