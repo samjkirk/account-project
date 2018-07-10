@@ -3,6 +3,7 @@ package com.qa.service;
 import com.qa.accounts.Accounts;
 import com.qa.constants.Constants;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Service {
 	HashMap<Integer, Accounts> accountsList = new HashMap<Integer, Accounts>();
@@ -43,5 +44,16 @@ public class Service {
 		} else {
 			return Constants.INVALID_ID_MESSAGE;
 		}
+	}
+
+	public int searchForAccountByName(String string) {
+		int count = 0;
+		for(Map.Entry<Integer, Accounts> entry : accountsList.entrySet()) {
+			if (entry.getValue().getFirstName().equals(string))
+			{
+				count++;
+			}
+		}
+		return count;
 	}
 } 
