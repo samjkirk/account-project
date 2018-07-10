@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
+import com.qa.constants.*;
 import com.qa.accounts.Accounts;
 import com.qa.service.Service;
 
@@ -24,21 +24,27 @@ public class AccountsTest {
 
 	@Test
 	public void testAddAccount() {
-		assertEquals("Account added", testService.addAccount(1, testAccount2));
-		assertEquals("Invalid ID", testService.addAccount(1, testAccount3));
-		assertEquals("Account added", testService.addAccount(2, testAccount3));
+		assertEquals(Constants.ACCOUNT_ADDED_MESSAGE, testService.addAccount(1, testAccount2));
+		assertEquals(Constants.INVALID_ID_MESSAGE, testService.addAccount(1, testAccount3));
+		assertEquals(Constants.ACCOUNT_ADDED_MESSAGE, testService.addAccount(2, testAccount3));
 	}
 	
 	@Test
 	public void testGetAccount() {
 		assertEquals(testAccount1.toString(), testService.getAccount(0));
-		assertEquals("Invalid ID", testService.getAccount(4));
+		assertEquals(Constants.INVALID_ID_MESSAGE, testService.getAccount(4));
 	}
 	
 	@Test
-	public void deleteAccount() {
-		assertEquals("Account deleted", testService.deleteAccount(0));
-		assertEquals("Invalid ID", testService.deleteAccount(5));
+	public void testDeleteAccount() {
+		assertEquals(Constants.ACCOUNT_DELETED_MESSAGE, testService.deleteAccount(0));
+		assertEquals(Constants.INVALID_ID_MESSAGE, testService.deleteAccount(5));
+	}
+	
+	@Test
+	public void testEditAccount() {
+		assertEquals(Constants.ACCOUNT_EDITED_MESSAGE, testService.editAccount(0, "thisis", "atest", "0004"));
+		assertEquals(Constants.INVALID_ID_MESSAGE, testService.editAccount(1, "thisis", "atest", "0004"));
 	}
 
 }
