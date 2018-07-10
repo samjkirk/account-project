@@ -12,6 +12,12 @@ public class Accounts {
 		setAccountNumber(accountNumber);
 	}
 
+	public Accounts() {
+		setFirstName(firstName);
+		setLastName(lastName);
+		setAccountNumber(accountNumber);
+	}
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
